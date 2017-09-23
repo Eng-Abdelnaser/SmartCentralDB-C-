@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database EntityNamespace="DB" ContextNamespace="DB" Class="SmartCentralDB" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=Eng_Abdo;Initial Catalog=SmartCentralDB;Integrated Security=True" SettingsObjectName="SmartCentralDB.Properties.Settings" SettingsPropertyName="DataSourceConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="Centrals">
+    <Type Name="Central">
+      <Column Name="IDcentral" Type="System.Int32" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CentralName" Type="System.String" DbType="nvarchar(30)" CanBeNull="false" />
+      <Association Name="Central_Cabel" Member="Cabels" ThisKey="IDcentral" OtherKey="IDcentral" Type="Cabel" />
+    </Type>
+  </Table>
+  <Table Name="Cabinas">
+    <Type Name="Cabina">
+      <Column Name="IDcabina" Type="System.Int32" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IDCable" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="CABINA" Type="System.String" DbType="nvarchar(10)" CanBeNull="false" />
+      <Column Name="Area" Type="System.String" DbType="nvarchar(200)" CanBeNull="false" />
+      <Column Name="picture" Type="System.String" DbType="nvarchar(1)" CanBeNull="false" />
+      <Column Name="Xaxes" Type="System.String" DbType="nvarchar(1)" CanBeNull="false" />
+      <Column Name="Yaxes" Type="System.String" DbType="nvarchar(1)" CanBeNull="false" />
+      <Column Name="CabinaGeneral" Type="System.String" DbType="nvarchar(30)" CanBeNull="false" />
+      <Column Name="ODU" Type="System.String" DbType="nvarchar(10)" CanBeNull="false" />
+      <Association Name="Cabina_DP" Member="DPs" ThisKey="IDcabina" OtherKey="IDcabina" Type="DP" />
+      <Association Name="Cabel_Cabina" Member="Cabel" ThisKey="IDCable" OtherKey="IDCable" Type="Cabel" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="DPs">
+    <Type Name="DP">
+      <Column Name="IDdp" Type="System.Int32" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDcabina" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="Area" Type="System.String" DbType="nvarchar(200)" CanBeNull="false" />
+      <Column Name="picture" Type="System.String" DbType="nvarchar(1)" CanBeNull="false" />
+      <Column Name="Xaxes" Type="System.String" DbType="nvarchar(1)" CanBeNull="false" />
+      <Column Name="Yaxes" Type="System.String" DbType="nvarchar(1)" CanBeNull="false" />
+      <Column Name="DPNumber" Type="System.String" DbType="nvarchar(10)" CanBeNull="false" />
+      <Column Name="DPGeneral" Type="System.String" DbType="nvarchar(40)" CanBeNull="false" />
+      <Association Name="Cabina_DP" Member="Cabina" ThisKey="IDcabina" OtherKey="IDcabina" Type="Cabina" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Users">
+    <Type Name="User">
+      <Column Name="ID" Type="System.String" DbType="nvarchar(30)" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PassWord" Type="System.String" DbType="nvarchar(30)" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="nvarchar(30)" CanBeNull="false" />
+      <Column Name="Degre" Type="System.String" DbType="nvarchar(30)" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Cabels">
+    <Type Name="Cabel">
+      <Column Name="IDCable" Type="System.Int32" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDcentral" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="CableNumber" Type="System.String" DbType="nvarchar(10)" CanBeNull="false" />
+      <Column Name="CabelGenral" Type="System.String" DbType="nvarchar(10)" CanBeNull="false" />
+      <Column Name="PunctuationBG" Type="System.String" DbType="nvarchar(11)" CanBeNull="false" />
+      <Column Name="PunctuationEN" Type="System.String" DbType="nvarchar(11)" CanBeNull="false" />
+      <Association Name="Cabel_Cabina" Member="Cabinas" ThisKey="IDCable" OtherKey="IDCable" Type="Cabina" />
+      <Association Name="Central_Cabel" Member="Central" ThisKey="IDcentral" OtherKey="IDcentral" Type="Central" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="js">
+    <Type Name="j">
+      <Column Name="i" Type="System.Int32" DbType="int" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

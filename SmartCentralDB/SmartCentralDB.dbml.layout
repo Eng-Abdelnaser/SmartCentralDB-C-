@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SmartCentralDB">
+  <DataContextMoniker Name="/SmartCentralDB" />
+  <nestedChildShapes>
+    <classShape Id="556b902a-798c-447c-b3b8-ca6f2b038719" absoluteBounds="0.5, 0.5, 2.375, 1.1939925130208335">
+      <DataClassMoniker Name="/SmartCentralDB/Central" />
+      <nestedChildShapes>
+        <elementListCompartment Id="13eea5f4-aeb2-483e-b31b-17db6845fad7" absoluteBounds="0.51500000000000012, 0.96, 2.3449999999999998, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="44ba4946-60cf-4ffa-92a3-67ee05e1ecd6" absoluteBounds="3.875, 4, 2.375, 2.5401025390625005">
+      <DataClassMoniker Name="/SmartCentralDB/Cabina" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0ebf9444-b094-4696-af95-b0db2f70465f" absoluteBounds="3.8899999999999997, 4.46, 2.3449999999999998, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2e116594-6048-47e4-8353-9fdae7c61fcf" absoluteBounds="4.375, 0.625, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/SmartCentralDB/DP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d5ed3bd9-714b-43bc-91de-4130e648ef27" absoluteBounds="4.3900000000000006, 1.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c3b08c63-b176-41ac-9258-570d8432ef74" absoluteBounds="0.75, 5.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SmartCentralDB/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e82a1d26-bf14-478b-ac4a-e43220421898" absoluteBounds="0.76499999999999968, 6.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9e4ba779-f190-4da8-b599-9c8ca2d2a601" absoluteBounds="0.5, 2.875, 2.5, 1.9631982421875003">
+      <DataClassMoniker Name="/SmartCentralDB/Cabel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5542e5a4-e494-46e0-9be4-faccbb975988" absoluteBounds="0.5149999999999999, 3.335, 2.4699999999999998, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aff74dfa-a2cd-4f7f-833e-be90d5fa3f69" absoluteBounds="4.25, 6.75, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/SmartCentralDB/j" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cc53ef13-33d6-4ee3-8bd7-b8bf9e2aef28" absoluteBounds="4.2650000000000006, 7.21, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.3125 : 4); (5.3125 : 2.97280110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SmartCentralDB/Cabina/Cabina_DP" />
+      <nodes>
+        <classShapeMoniker Id="44ba4946-60cf-4ffa-92a3-67ee05e1ecd6" />
+        <classShapeMoniker Id="2e116594-6048-47e4-8353-9fdae7c61fcf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 4.41909912109375); (3.875 : 4.41909912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SmartCentralDB/Cabel/Cabel_Cabina" />
+      <nodes>
+        <classShapeMoniker Id="9e4ba779-f190-4da8-b599-9c8ca2d2a601" />
+        <classShapeMoniker Id="44ba4946-60cf-4ffa-92a3-67ee05e1ecd6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.6875 : 1.69399251302083); (1.6875 : 2.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SmartCentralDB/Central/Central_Cabel" />
+      <nodes>
+        <classShapeMoniker Id="556b902a-798c-447c-b3b8-ca6f2b038719" />
+        <classShapeMoniker Id="9e4ba779-f190-4da8-b599-9c8ca2d2a601" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
